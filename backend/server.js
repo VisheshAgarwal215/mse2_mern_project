@@ -10,7 +10,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: true, // Allow all origins in development, but you can specify your frontend URL in production
+  credentials: true
+}));
 app.use(express.json());
 
 const authRoutes = require("./routes/authRoutes");
