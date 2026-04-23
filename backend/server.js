@@ -11,7 +11,11 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: true, // Allow all origins in development, but you can specify your frontend URL in production
+  origin: [
+    "https://mse2-mern-project-1.onrender.com",
+    "http://localhost:5173",
+    "http://localhost:3000"
+  ],
   credentials: true
 }));
 app.use(express.json());
